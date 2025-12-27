@@ -69,23 +69,26 @@ export default function Events() {
 
   return (
     <section ref={sectionRef} id="events" className="overflow-hidden bg-white scroll-mt-24">
-      <div ref={triggerRef} className="relative flex h-screen w-[400vw] items-center px-[10vw]">
+      <div
+        ref={triggerRef}
+        className="relative flex h-[100svh] md:h-screen w-[400vw] items-center px-4 sm:px-[8vw] md:px-[10vw]"
+      >
         
         {/* Intro Slide */}
-        <div className="flex h-full w-screen flex-col justify-center pr-20">
-          <span className="font-mono text-xs uppercase tracking-[0.5em] text-accent mb-4">/ 03 Operations</span>
-          <h2 className="text-8xl font-black uppercase tracking-tighter leading-none">
+        <div className="flex h-full w-screen flex-col justify-center pr-6 sm:pr-10 md:pr-20">
+          <span className="mb-4 font-mono text-[10px] sm:text-xs uppercase tracking-[0.5em] text-accent">/ 03 Operations</span>
+          <h2 className="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none">
             Event <br /> <span className="text-charcoal/10 italic">Log</span>
           </h2>
-          <p className="mt-8 text-charcoal/40 font-mono text-[10px] uppercase tracking-widest animate-pulse">
+          <p className="mt-6 sm:mt-8 text-charcoal/40 font-mono text-[10px] uppercase tracking-widest animate-pulse">
             Scroll to Navigate Timeline →
           </p>
         </div>
 
         {/* Event Cards */}
         {events.map((event, index) => (
-          <div key={index} className="flex h-full w-screen items-center justify-center px-10">
-            <div className="relative grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-12 items-center">
+          <div key={index} className="flex h-full w-screen items-center justify-center px-4 sm:px-8 md:px-10">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 w-full max-w-5xl gap-6 sm:gap-10 md:gap-12 items-center">
               
               {/* Image Side */}
               <div className="relative aspect-video md:aspect-square overflow-hidden rounded-xl bg-gray-100 group">
@@ -103,18 +106,18 @@ export default function Events() {
               </div>
 
               {/* Text Side */}
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-accent border-b border-accent/20 pb-2">
                   {event.type} {"//"} {event.date}
                 </span>
-                <h3 className="text-5xl font-bold uppercase tracking-tighter leading-tight">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tighter leading-tight">
                   {event.title}
                 </h3>
                 <p className="text-charcoal/60 text-sm leading-relaxed max-w-sm">
                   {event.desc}
                 </p>
                 
-                <div className="pt-8">
+                <div className="pt-4 sm:pt-8">
                   <button className="h-12 w-12 rounded-full border border-charcoal/10 flex items-center justify-center hover:bg-accent hover:border-accent transition-all duration-300">
                     <div className="w-1.5 h-1.5 rounded-full bg-charcoal" />
                   </button>
@@ -122,7 +125,7 @@ export default function Events() {
               </div>
 
               {/* Background Number */}
-              <span className="absolute -bottom-10 -right-10 text-[15rem] font-black text-charcoal/3 select-none pointer-events-none">
+              <span className="absolute -bottom-6 -right-4 sm:-bottom-10 sm:-right-10 text-[7rem] sm:text-[11rem] md:text-[15rem] font-black text-charcoal/3 select-none pointer-events-none">
                 0{index + 1}
               </span>
             </div>

@@ -161,7 +161,7 @@ export default function Execom() {
         </div>
 
         {/* Member Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-charcoal/5 border border-charcoal/5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-charcoal/5 border border-charcoal/5">
           {leads.map((member, i) => (
             <div 
               key={i} 
@@ -195,9 +195,9 @@ export default function Execom() {
               </div>
 
               {/* Text Details */}
-              <div className="p-8 relative z-10 bg-white">
+              <div className="p-4 sm:p-8 relative z-10 bg-white">
                 <div className="space-y-4">
-                  <h4 className="text-2xl font-bold tracking-tight uppercase group-hover:text-accent transition-colors leading-tight">
+                  <h4 className="text-lg sm:text-2xl font-bold tracking-tight uppercase group-hover:text-accent transition-colors leading-tight break-words">
                     {member.name}
                   </h4>
                   <div>
@@ -206,7 +206,7 @@ export default function Execom() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-charcoal/5 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 text-charcoal/60">
+                <div className="mt-6 sm:mt-8 pt-6 border-t border-charcoal/5 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 text-charcoal/60">
                    <p className="text-[9px] font-mono leading-tight uppercase tracking-tighter">
                      {"// Ready for Industrial "}<br /> Collaboration
                    </p>
