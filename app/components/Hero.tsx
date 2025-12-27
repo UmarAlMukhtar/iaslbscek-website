@@ -1,10 +1,8 @@
 "use client";
-import { useRef } from "react";
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useMediaQuery } from "react-responsive";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -14,7 +12,52 @@ const Hero = () => {
   const containerRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoWrapperRef = useRef(null);
-  useMediaQuery({ maxWidth: 767 });
+
+  // Improve autoplay reliability (mobile Safari / visibility changes / bfcache restore)
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    const kick = () => {
+      try {
+        vid.muted = true;
+        // iOS Safari requires playsInline for background videos.
+        vid.playsInline = true;
+
+        // If the element was hidden (loader) some browsers delay fetching/decoding.
+        if (vid.readyState < 2) {
+          vid.load();
+        }
+
+        const playPromise = vid.play();
+        if (playPromise && typeof (playPromise as Promise<void>).then === "function") {
+          (playPromise as Promise<void>)
+            .then(() => {
+              // We scrub via GSAP, so keep it paused.
+              vid.pause();
+            })
+            .catch(() => {
+              // Autoplay can still be blocked (Low Power Mode / user settings).
+            });
+        }
+      } catch {
+        // Ignore
+      }
+    };
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") kick();
+    };
+
+    kick();
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("pageshow", kick);
+
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      window.removeEventListener("pageshow", kick);
+    };
+  }, []);
 
   useGSAP(() => {
     // 1. Title Entrance
@@ -48,13 +91,37 @@ const Hero = () => {
       },
     });
 
-    // Scrub the video time
-    vid.onloadedmetadata = () => {
-      tl.to(vid, {
+    let scrubTween: gsap.core.Tween | null = null;
+    const setupScrub = () => {
+      if (!Number.isFinite(vid.duration) || vid.duration <= 0) return;
+
+      // Ensure we have a decodable frame.
+      if (vid.currentTime === 0) {
+        try {
+          vid.currentTime = 0.001;
+        } catch {
+          // Ignore
+        }
+      }
+
+      if (scrubTween) {
+        tl.remove(scrubTween);
+        scrubTween.kill();
+        scrubTween = null;
+      }
+
+      scrubTween = gsap.to(vid, {
         currentTime: vid.duration,
         ease: "none",
-      }, 0);
+      });
+      tl.add(scrubTween, 0);
     };
+
+    if (vid.readyState >= 1) {
+      setupScrub();
+    } else {
+      vid.addEventListener("loadedmetadata", setupScrub, { once: true });
+    }
 
     // PARALLAX: Move the video wrapper DOWN as we scroll
     tl.to(videoWrapperRef.current, {
@@ -68,6 +135,13 @@ const Hero = () => {
       y: -100,
       ease: "none",
     }, 0);
+
+    return () => {
+      if (scrubTween) {
+        tl.remove(scrubTween);
+        scrubTween.kill();
+      }
+    };
 
   }, { scope: containerRef });
 
