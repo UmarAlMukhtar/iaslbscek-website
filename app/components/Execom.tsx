@@ -18,95 +18,95 @@ const leads = [
     image: "/images/SDM.png" 
   },
   { 
-    name: "Sreenivas Pai K", 
+    name: "KE Nandagopal", 
     role: "Mentor", 
     dept: "IEEE Senior Member", 
     id: "STK-01",
-    image: "/images/SPK.png" 
-  },
-  { 
-    name: "KE Nandagopal", 
-    role: "Chairperson", 
-    dept: "S8 ECE", 
-    id: "STK-02",
     image: "/images/KE.png" 
   },
   { 
     name: "Fathima Basheer MTP", 
-    role: "Vice Chairperson", 
-    dept: "S6 CSE", 
-    id: "STK-03",
+    role: "Chairperson", 
+    dept: "S7 CSE", 
+    id: "STK-02",
     image: "/images/MTP.png" 
   },
   { 
-    name: "Abdul Afuw", 
+    name: "Mohammed Zain", 
+    role: "Vice Chairperson", 
+    dept: "S7 EEE", 
+    id: "STK-03",
+    image: "/images/zai.png" 
+  },
+  { 
+    name: "Thameem T M", 
     role: "Treasurer", 
-    dept: "S6 ME", 
+    dept: "S3 ECE", 
     id: "STK-04",
-    image: "/images/AFU.png" 
+    image: "/images/tha.png" 
   },
   { 
     name: "Thanseeha Nasrin PM", 
     role: "Secretary", 
-    dept: "S4 CSE", 
+    dept: "S5 CSE", 
     id: "STK-05",
     image: "/images/TNPM.png" 
   },
   { 
-    name: "Umar Al Mukhtar Ibrahimkutty", 
-    role: "Webmaster", 
-    dept: "S6 CSE", 
-    id: "STK-06",
-    image: "/images/UAM.png" 
-  },
-  { 
-    name: "Nithya A", 
-    role: "MDC", 
-    dept: "S4 CSE", 
-    id: "STK-07",
-    image: "/images/NITY.png" 
-  },
-  { 
     name: "Aswathy Shyji", 
-    role: "MDC", 
-    dept: "S4 CSE", 
-    id: "STK-08",
+    role: "Webmaster", 
+    dept: "S5 CSE", 
+    id: "STK-06",
     image: "/images/ASW.png" 
   },
   { 
-    name: "Aysha Safa", 
+    name: "Alphons N J", 
     role: "MDC", 
-    dept: "S4 CSE", 
+    dept: "S3 ECE", 
+    id: "STK-07",
+    image: "/images/alp.png" 
+  },
+  { 
+    name: "Mohammed Shasin Chalil", 
+    role: "MDC", 
+    dept: "S3 CSE", 
+    id: "STK-08",
+    image: "/images/sha.png" 
+  },
+  { 
+    name: "Nithya A", 
+    role: "Content Writer", 
+    dept: "S5 CSE", 
     id: "STK-09",
-    image: "/images/AYS.png" 
+    image: "/images/NITY.png" 
   },
   { 
-    name: "Adhish R", 
-    role: "Designer", 
-    dept: "S6 CSE", 
+    name: "Jyothish Nalinakshan", 
+    role: "Design Coordinator", 
+    dept: "S3 CSBS", 
     id: "STK-10",
-    image: "/images/ADH.png" 
+    image: "/images/jyo.png" 
   },
   { 
-    name: "Nivedya PV", 
-    role: "Designer", 
-    dept: "S4 CSE", 
+    name: "Mohammed Sinan", 
+    role: "EC Coordinator", 
+    dept: "S3 ECE", 
     id: "STK-11",
-    image: "/images/NIV.png" 
+    image: "/images/sin.png" 
   },
   { 
-    name: "Neeraj Rajeev", 
+    name: "Fathima Ridha P", 
     role: "Technical Activity Coordinator", 
-    dept: "S4 CSE", 
+    dept: "S3 CSE", 
     id: "STK-12",
-    image: "/images/NEER.png" 
+    image: "/images/riid.png" 
   },
   { 
-    name: "Harikrishnan Panayal", 
+    name: "Ambika M", 
     role: "Student Activity Coordinator", 
-    dept: "S6 ECE", 
+    dept: "S3 ECE", 
     id: "STK-13",
-    image: "/images/HARI.png" 
+    image: "/images/ambi.png" 
   },
 ];
 
