@@ -20,7 +20,7 @@ const leads = [
   { 
     name: "KE Nandagopal", 
     role: "Mentor", 
-    dept: "IEEE Senior Member", 
+    dept: "IEEE IAS SBC Past Chair", 
     id: "STK-01",
     image: "/images/KE.png" 
   },
