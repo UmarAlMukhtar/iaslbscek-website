@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Events from "./components/Events";
 import Execom from "./components/Execom";
+import Reports from "./components/Reports";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -48,7 +49,10 @@ export default function Home() {
         {/* Section 04: Execom (Core Stack) */}
         <Execom />
 
-        {/* Section 05: System Termination (Footer) */}
+        {/* Section 05: Reports (Archives) */}
+        <Reports />
+
+        {/* Section 06: System Termination (Footer) */}
         <Footer />
       </div>
 

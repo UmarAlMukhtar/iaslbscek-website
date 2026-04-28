@@ -69,6 +69,7 @@ export default function Navbar() {
             { label: "The Spec", href: "#about" },
             { label: "Operations", href: "#events" },
             { label: "Core Stack", href: "#execom" },
+            { label: "Archives", href: "#reports" },
           ].map((item, i) => (
             <a 
               key={i}

@@ -96,13 +96,6 @@ export default function About() {
               <p className="text-[10px] text-charcoal/40 font-mono uppercase tracking-tighter">Industrial Visits. Expert Talks. Collaboration.</p>
             </div>
           </div>
-
-          <div className="about-text pt-6">
-             <button className="group flex items-center gap-4 hover:text-accent transition-colors">
-                <div className="w-10 h-[1px] bg-charcoal group-hover:bg-accent group-hover:w-16 transition-all duration-500" />
-                <span className="text-[10px] font-bold uppercase tracking-widest">Download Society Bylaws</span>
-             </button>
-          </div>
         </div>
       </div>
 
