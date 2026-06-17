@@ -38,9 +38,17 @@ const events = [
     id: "EV-04",
     title: "Useless Projects - Tinkerhub Hackathon",
     type: "Competition",
-    date: "AUG 2026",
+    date: "AUG 2025",
     desc: "A hackathon focused on creating unconventional and 'useless' tech projects for fun and learning.",
     img: "/events/EV_04.jpg"
+  },
+  {
+    id: "EV-05",
+    title: "The Automation 101 + IoT Basics Talk Session",
+    type: "Talk Session",
+    date: "JUNE 2026",
+    desc: "An insightful session on the fundamentals of Automation and IoT, exploring key concepts and real-world applications of emerging technologies.",
+    img: "/events/EV_05.jpg"
   }
 ];
 
